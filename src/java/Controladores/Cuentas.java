@@ -7,6 +7,7 @@ package Controladores;
 
 import Servicios.Inventario;
 import Servicios.Servicios;
+import dato.Factura;
 import dato.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -39,55 +40,57 @@ public class Cuentas extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            RequestDispatcher rq = request.getRequestDispatcher("leer.jsp");
+            RequestDispatcher rq = request.getRequestDispatcher("estadoCuenta.jsp");
 
             ArrayList<dato.Factura> fac = null;
             Servicios servicios = new Servicios();
             Inventario bd = servicios.leerFac();
+
             if (bd != null) {
                 fac = bd.getPrestamos();
-                
-                int mayor=0;
-                String nombreLi=null;
-                int costoTotal=0;
-                
+
+                int cantidadTotal = 0;
+                int costoTotal = 0;
+                Factura factu=new Factura();
+                        
+
                 for (int i = 0; i < fac.size(); i++) {
-                    
-                    Libro li=new Libro();
-                    mayor=fac.get(i).getCantidad();
-                    li=fac.get(i).getLi();
-                    
-                    
-                    
-                   costoTotal=(li.getPrecio() * mayor);
-                    
-                    
-                    
-                    
+
+                    cantidadTotal = fac.get(i).getCantidad()+cantidadTotal;
+
+                    if (cantidadTotal < fac.get(i).getCantidad()) {
+                      
+
+                    }
                 }
-               
-                request.setAttribute("fac", fac);
+                
+                System.out.println(li.getNombre()+" "+li.getPrecio());
+
+                costoTotal = (li.getPrecio() * cantidadTotal);
+                li.setPrecio(costoTotal);
+
+                request.setAttribute("li", li);
             } else {
-                request.setAttribute("fac", null);
+                request.setAttribute("li", null);
             }
             rq.forward(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Index.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
-}
+
+    }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -101,7 +104,7 @@ public class Cuentas extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -112,7 +115,7 @@ public class Cuentas extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
