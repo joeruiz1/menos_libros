@@ -22,11 +22,10 @@
                 <div id="menubar">
                     <ul id="menu">
                         <!-- put class="current" in the li tag for the selected page - to highlight which page you're on -->
-                        <li ><a href="index">Crear</a></li>
-                        <li class="current"><a href="estadoCuenta.jsp">Cuentas</a></li>
+                        <li ><a href="index">Crear</a></li>                        
+                        <li><a href="estadoCuenta.jsp">Cuentas</a></li>
                         <li><a href="Listar">Leer</a></li>
-                        <li><a href="borrar.jsp">Borrar</a></li>
-                        <li><a href="contact.html">Listar Todo</a></li>
+                        <li class="current"><a href="borrar.jsp">Borrar</a></li>
                         <li><a href="inventario.jsp">Registar Libro</a></li>
                     </ul>
                 </div>

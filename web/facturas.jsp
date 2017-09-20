@@ -33,7 +33,7 @@
 
                         <li><a href="index">Crear</a></li>
                         <li><a href="estadoCuenta.jsp">Cuentas</a></li>
-                        <li><a href="listar">Leer</a></li>
+                        <li><a href="Listar">Leer</a></li>
                         <li><a href="borrar.jsp">Borrar</a></li>
                         <li class="current"><a href="Facturas">Facturas</a></li>
                         <li><a href="inventario.jsp">Registar Libro</a></li>
@@ -64,10 +64,11 @@
                         <tr>
                             <td>Cantidad</td>
                             <td>Libro</td>
+                            <td>Autor</td>
                             <td>Editorial</td>
                             <td>precio</td>
-                            <td>Autor</td>
                             <td>Cliente</td>
+                            
 
 
                         </tr>
