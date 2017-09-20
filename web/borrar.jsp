@@ -26,6 +26,7 @@
                         <li><a href="estadoCuenta.jsp">Cuentas</a></li>
                         <li><a href="Listar">Leer</a></li>
                         <li class="current"><a href="borrar.jsp">Borrar</a></li>
+                        <li><a href="Facturas">Facturas</a></li>
                         <li><a href="inventario.jsp">Registar Libro</a></li>
                     </ul>
                 </div>
