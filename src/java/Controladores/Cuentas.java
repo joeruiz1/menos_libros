@@ -7,6 +7,7 @@ package Controladores;
 
 import Servicios.Inventario;
 import Servicios.Servicios;
+import dato.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -46,12 +47,28 @@ public class Cuentas extends HttpServlet {
             if (bd != null) {
                 fac = bd.getPrestamos();
                 
+                int mayor=0;
+                String nombreLi=null;
+                int costoTotal=0;
                 
-                
-                
-                request.setAttribute("libros", fac);
+                for (int i = 0; i < fac.size(); i++) {
+                    
+                    Libro li=new Libro();
+                    mayor=fac.get(i).getCantidad();
+                    li=fac.get(i).getLi();
+                    
+                    
+                    
+                   costoTotal=(li.getPrecio() * mayor);
+                    
+                    
+                    
+                    
+                }
+               
+                request.setAttribute("fac", fac);
             } else {
-                request.setAttribute("libros", null);
+                request.setAttribute("fac", null);
             }
             rq.forward(request, response);
         } catch (ClassNotFoundException ex) {

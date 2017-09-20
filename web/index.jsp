@@ -31,7 +31,7 @@
                     <ul id="menu">
                         <!-- put class="current" in the li tag for the selected page - to highlight which page you're on -->
                         <li class="current"><a href="index">Crear</a></li>
-                        <li><a href="Actualizar.jsp">Actualizar</a></li>
+                        <li><a href="estadoCuenta.jsp">Cuentas</a></li>
                         <li><a href="Listar">Leer</a></li>
                         <li><a href="borrar.jsp">Borrar</a></li>
                         <li><a href="Facturas">Facturas</a></li>

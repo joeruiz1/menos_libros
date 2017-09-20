@@ -32,12 +32,12 @@
 
 
                         <li><a href="index">Crear</a></li>
-                        <li><a href="examples.html">Actualizar</a></li>
+                        <li><a href="estadoCuenta.jsp">Cuentas</a></li>
                         <li><a href="listar">Leer</a></li>
                         <li><a href="borrar.jsp">Borrar</a></li>
                         <li class="current"><a href="Facturas">Facturas</a></li>
                         <li><a href="inventario.jsp">Registar Libro</a></li>
-                        <li><a href="estadoCuenta.jsp">Cuentas</a></li>
+                   
                     </ul>
                 </div>
             </div>
